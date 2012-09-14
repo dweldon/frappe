@@ -18,16 +18,21 @@ $ cd [project-name] && rm -rf .git && npm install
 
 ## Technologies
 
+### Core
 * [node](http://nodejs.org/)
 * [express](https://github.com/visionmedia/express)
 * [coffee-script](https://github.com/jashkenas/coffee-script)
 * [jade](https://github.com/visionmedia/jade)
 * [stylus](https://github.com/learnboost/stylus)
 
+### Also Included
+* [jquery 1.8.1](http://jquery.com/)
+* [bootstrap 2.1.1](http://twitter.github.com/bootstrap/)
+
 ## Features
 
-* No global dependencies.
-* CoffeeScript only.
+* no global dependencies
+* coffeescript only
 
 ## License
 

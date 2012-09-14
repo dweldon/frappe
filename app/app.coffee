@@ -20,7 +20,7 @@ app.configure "development", ->
   app.use express.errorHandler()
 
 app.get '/', (req, res) ->
-  res.send 'Hello World'
+  res.render 'index', title: 'Hello World!'
 
 http.createServer(app).listen app.get('port'), ->
   console.log "Express server listening on port #{app.get 'port'} in #{app.settings.env} mode"
