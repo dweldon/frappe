@@ -22,6 +22,8 @@ app.configure "development", ->
 
 app.get '/', (req, res) ->
   res.render 'index', title: 'Hello World!'
+app.get '*', (req, res) ->
+  res.render '404', title: '404'
 
 http.createServer(app).listen app.get('port'), ->
   console.log "Express server listening on port #{app.get 'port'} in #{app.settings.env} mode"

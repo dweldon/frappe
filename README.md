@@ -1,3 +1,5 @@
+![Frappe](https://raw.github.com/dweldon/frappe/master/app/public/img/frappe.png)
+
 # Frappe
 
 Template for creating [Express](http://expressjs.com) applications with
