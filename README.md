@@ -16,23 +16,45 @@ $ git clone http://github.com/dweldon/frappe [project-name]
 $ cd [project-name] && rm -rf .git && npm install
 ```
 
+## Commands
+
+To start the server you can do:
+```sh
+$ npm start
+```
+
+For convenience while developing, automatic restarts are provided with:
+```sh
+$ cake start
+```
+
+Additionally, the port and environment variables can be set. The following
+example will start the server listening on port 3000 in production mode:
+```sh
+$ cake -p 3000 -e production start
+```
+
+## Notes
+
+* There are no global dependencies for production. When developing, it is
+recommended that CoffeeScript be installed globally so the `cake` command is
+available (see above).
+
 ## Technologies
 
-### Core
+### Dependencies
 * [node](http://nodejs.org/)
 * [express](https://github.com/visionmedia/express)
 * [coffee-script](https://github.com/jashkenas/coffee-script)
 * [jade](https://github.com/visionmedia/jade)
 * [stylus](https://github.com/learnboost/stylus)
 
+### Development Dependencies
+* [node-dev](https://github.com/fgnass/node-dev)
+
 ### Also Included
 * [jquery 1.8.1](http://jquery.com/)
 * [bootstrap 2.1.1](http://twitter.github.com/bootstrap/)
-
-## Features
-
-* no global dependencies
-* coffeescript only
 
 ## License
 
