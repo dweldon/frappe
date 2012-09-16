@@ -16,14 +16,15 @@ app.configure ->
   app.use app.router
   app.use require('stylus').middleware "#{__dirname}/public"
 
+# use custom middleware
+require('./middleware')(app)
+
 app.configure "development", ->
   app.use express.errorHandler()
   app.locals.pretty = true
 
 app.get '/', (req, res) ->
   res.render 'index', title: 'Hello World!'
-app.get '*', (req, res) ->
-  res.render '404', title: '404'
 
 http.createServer(app).listen app.get('port'), ->
   console.log "Express server listening on port #{app.get 'port'} in #{app.settings.env} mode"
