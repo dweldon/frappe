@@ -1,6 +1,6 @@
 ![Frappe](https://raw.github.com/dweldon/frappe/master/app/public/img/frappe.png)
 
-# Frappe
+# Frappé
 
 Template for creating [Express](http://expressjs.com) applications with
 [CoffeeScript](http://coffeescript.org).
@@ -20,7 +20,9 @@ $ cd [project-name] && rm -rf .git && npm install
 
 ## Commands
 
-To start the server you can do:
+### start
+
+To start the server:
 ```sh
 $ npm start
 ```
@@ -36,15 +38,25 @@ example will start the server listening on port 3000 in production mode:
 $ cake -p 3000 -e production start
 ```
 
+### test
+
+To run the tests:
+```sh
+$ cake test
+```
+
 ## Notes
 
 * There are no global dependencies for production. When developing, it is
 recommended that CoffeeScript be installed globally so the `cake` command is
 available (see above).
+* The test and development environments use different port numbers so you can
+leave your development server running while testing.
 
 ## Technologies
 
 ### Dependencies
+
 * [node](http://nodejs.org/)
 * [express](https://github.com/visionmedia/express)
 * [coffee-script](https://github.com/jashkenas/coffee-script)
@@ -52,9 +64,14 @@ available (see above).
 * [stylus](https://github.com/learnboost/stylus)
 
 ### Development Dependencies
+
 * [node-dev](https://github.com/fgnass/node-dev)
+* [mocha](https://github.com/visionmedia/mocha)
+* [should](https://github.com/visionmedia/should.js)
+* [request](https://github.com/mikeal/request)
 
 ### Also Included
+
 * [jquery 1.8.1](http://jquery.com/)
 * [bootstrap 2.1.1](http://twitter.github.com/bootstrap/)
 
