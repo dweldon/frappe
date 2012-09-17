@@ -45,6 +45,13 @@ To run the tests:
 $ cake test
 ```
 
+### update
+
+To update all packages and run [npmedge](https://npmjs.org/package/npmedge):
+```sh
+$ cake update
+```
+
 ## Notes
 
 * There are no global dependencies for production. When developing, it is
@@ -69,6 +76,7 @@ leave your development server running while testing.
 * [mocha](https://github.com/visionmedia/mocha)
 * [should](https://github.com/visionmedia/should.js)
 * [request](https://github.com/mikeal/request)
+* [npmedge](https://npmjs.org/package/npmedge)
 
 ### Also Included
 
