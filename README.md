@@ -59,6 +59,11 @@ recommended that CoffeeScript be installed globally so the `cake` command is
 available (see above).
 * The test and development environments use different port numbers so you can
 leave your development server running while testing.
+* All modules in the models, controllers, and helpers directories (and
+subdirectories) will be automatically required and loaded into `app.locals`. For
+example, `app/models/user_model.coffee` will be available as
+app.locals.UserModel. This requires that all modules in the aforementioned
+directories export a single function which takes `app` as its parameter.
 
 ## Technologies
 
@@ -69,6 +74,8 @@ leave your development server running while testing.
 * [coffee-script](https://github.com/jashkenas/coffee-script)
 * [jade](https://github.com/visionmedia/jade)
 * [stylus](https://github.com/learnboost/stylus)
+* [underscore](http://documentcloud.github.com/underscore/)
+* [underscore.string](https://github.com/epeli/underscore.string)
 
 ### Development Dependencies
 

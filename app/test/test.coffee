@@ -1,6 +1,6 @@
 request = require 'request'
 app = require '../app'
-User = require '../models/user'
+User = app.locals.UserModel
 
 PORT = app.get 'port'
 BASE_URL = "http://localhost:#{PORT}"

@@ -22,6 +22,9 @@ app.configure ->
 # use custom middleware
 require('./middleware')(app)
 
+# autoload modules into app.locals
+require('./autoload')(app, ['models', 'controllers', 'helpers'])
+
 app.configure "development", ->
   app.use express.errorHandler()
   app.locals.pretty = true
