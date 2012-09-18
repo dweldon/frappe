@@ -23,4 +23,4 @@ module.exports = (app, dirs) ->
         app.locals[modulename] = loadedModule
 
   for dir in dirs
-    autoload path.join(__dirname, dir)
+    autoload path.join(__dirname, '..', dir)

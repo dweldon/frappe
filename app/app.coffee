@@ -20,10 +20,10 @@ app.configure ->
   app.use require('stylus').middleware "#{__dirname}/public"
 
 # use custom middleware
-require('./middleware')(app)
+require('./config/middleware')(app)
 
 # autoload modules into app.locals
-require('./autoload')(app, ['models', 'controllers', 'helpers'])
+require('./config/autoload')(app, ['models', 'controllers', 'helpers'])
 
 app.configure "development", ->
   app.use express.errorHandler()
