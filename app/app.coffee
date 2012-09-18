@@ -1,4 +1,5 @@
 express = require 'express'
+namespace = require 'express-namespace'
 http = require 'http'
 app = express()
 
@@ -19,11 +20,9 @@ app.configure ->
   app.use app.router
   app.use require('stylus').middleware "#{__dirname}/public"
 
-# use custom middleware
 require('./config/middleware')(app)
-
-# autoload modules into app.locals
 require('./config/autoload')(app, ['models', 'controllers', 'helpers'])
+require('./config/routes')(app)
 
 app.configure "development", ->
   app.use express.errorHandler()
@@ -32,9 +31,6 @@ app.configure "development", ->
 app.configure "test", ->
   app.set 'port', PORT_TEST
   app.disable
-
-app.get '/', (req, res) ->
-  res.render 'index', title: 'Hello World!'
 
 http.createServer(app).listen app.get('port'), ->
   console.log "Express server listening on port #{app.get 'port'} in #{app.settings.env} mode"

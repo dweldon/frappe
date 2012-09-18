@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1 Users
+  ol
+    for user in users
+      li "#{user.first} #{user.last}: #{user.id}"
+
+  form(action='/users', method='post')
+    label
+      | First Name
+      input(type='text', name='first')
+    label
+      | Last Name
+      input(type='text', name='last')
+    input(type='submit', name='New User')

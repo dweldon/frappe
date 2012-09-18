@@ -8,8 +8,7 @@ Template for creating [Express](http://expressjs.com) applications with
 Inspired by:
 * [skeleton](https://github.com/EtienneLem/skeleton)
 * [express-coffee](https://github.com/twilson63/express-coffee)
-* [full-stack-nodejs part 1](https://peepcode.com/products/full-stack-nodejs-i)
-* [full-stack-nodejs part 2](https://peepcode.com/products/full-stack-nodejs-ii)
+* [full-stack-nodejs](https://peepcode.com/screencasts/javascript)
 
 ## Installation
 
@@ -76,6 +75,7 @@ directories export a single function which takes `app` as its parameter.
 * [stylus](https://github.com/learnboost/stylus)
 * [underscore](http://documentcloud.github.com/underscore/)
 * [underscore.string](https://github.com/epeli/underscore.string)
+* [express-namespace](https://github.com/visionmedia/express-namespace)
 
 ### Development Dependencies
 
