@@ -4,12 +4,14 @@ html(lang='en')
     meta(charset='utf-8')
     title= title
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(href='/css/bootstrap.min.css', rel='stylesheet')
-    link(href='/css/bootstrap-responsive.min.css', rel='stylesheet')
-    //if lt IE 9
-      script(src='//html5shim.googlecode.com/svn/trunk/html5.js')
+    block css
+      link(href='/css/bootstrap.min.css', rel='stylesheet')
+      link(href='/css/bootstrap-responsive.min.css', rel='stylesheet')
+      //if lt IE 9
+        script(src='//html5shim.googlecode.com/svn/trunk/html5.js')
   body
     .container
       block content
-    script(src='/js/jquery-1.8.1.min.js')
-    script(src='/js/bootstrap.min.js')
+    block js
+      script(src='/js/jquery-1.8.1.min.js')
+      script(src='/js/bootstrap.min.js')

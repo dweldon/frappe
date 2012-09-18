@@ -1,16 +1,23 @@
 extends ../layout
 
-block content
-  h1 Users
-  ol
-    for user in users
-      li "#{user.first} #{user.last}: #{user.id}"
+append css
+  != css('users')
 
-  form(action='/users', method='post')
-    label
-      | First Name
-      input(type='text', name='first')
-    label
-      | Last Name
-      input(type='text', name='last')
-    input(type='submit', name='New User')
+block content
+  .row
+    .span8.offset4
+      h1 Users
+      ol
+        for user in users
+          li "#{user.first} #{user.last}: #{user.id}"
+
+      form(action='/users', method='post')
+        label First Name
+        input(type='text', name='first')
+        label Last Name
+        input(type='text', name='last')
+        br
+        button(type="submit", class="btn") Submit
+
+append js
+  != js('users')

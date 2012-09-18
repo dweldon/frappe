@@ -56,6 +56,7 @@ $ cake update
 * There are no global dependencies for production. When developing, it is
 recommended that CoffeeScript be installed globally so the `cake` command is
 available (see above).
+* Files in the assets directory are automatically compiled with connect-assets.
 * The test and development environments use different port numbers so you can
 leave your development server running while testing.
 * All modules in the models, controllers, and helpers directories (and
@@ -76,6 +77,8 @@ directories export a single function which takes `app` as its parameter.
 * [underscore](http://documentcloud.github.com/underscore/)
 * [underscore.string](https://github.com/epeli/underscore.string)
 * [express-namespace](https://github.com/visionmedia/express-namespace)
+* [connect-assets](https://github.com/TrevorBurnham/connect-assets)
+* [nib](https://github.com/visionmedia/nib)
 
 ### Development Dependencies
 
