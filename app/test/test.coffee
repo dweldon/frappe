@@ -1,6 +1,5 @@
 request = require 'request'
 app = require '../app'
-User = app.locals.UserModel
 
 PORT = app.get 'port'
 BASE_URL = "http://localhost:#{PORT}"
@@ -25,30 +24,3 @@ describe 'server', ->
       request "#{BASE_URL}/404", (err, res, body) ->
         res.should.have.status 404
         done()
-
-describe 'User', ->
-  user = null
-
-  beforeEach ->
-    user = new User
-
-  afterEach ->
-    user.remove()
-
-  it 'should have an empty string for both first and last name', ->
-    user.first.should.equal ''
-    user.last.should.equal ''
-
-  it 'should have a unique id', ->
-    user.id.should.be.a 'string'
-    user.id.should.have.length 8
-    anotherUser = new User
-    anotherUser.id.should.not.equal user.id
-
-  it '#all should return an empty array before a save', ->
-    User.all().should.eql []
-
-  it '#save should add the user to the array of all users', ->
-    user.save()
-    User.all().should.have.length 1
-    User.all()[0].should.eql user

@@ -1,20 +1,17 @@
 extends ../layout
 
-append css
-  != css('users')
-
 block content
   .row
-    .span8.offset4
+    .span4.offset4
       h1 Users
-      ol
+      ul.unstyled
         for user in users
-          li "#{user.first} #{user.last}: #{user.id}"
-
-      form(action='/users', method='post')
-        label First Name
-        input(type='text', name='first')
-        label Last Name
-        input(type='text', name='last')
-        br
-        button(type="submit", class="btn") Submit
+          li
+            strong #{user.name}: #{user.id}
+      p
+        a.btn.btn-primary.btn-large(href='/users/new')
+          i.icon-user.icon-white
+          |  New User
+        a.btn.btn-large(href='/')
+          i.icon-home
+          |  Home
