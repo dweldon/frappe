@@ -116,6 +116,7 @@ Additionally you will probably want to immediately customize the following:
 * `app/config/routes.coffee`
 * `app/helpers/title_helper.coffee`
 * `app/views/*`
+* `app/assets/*`
 * `package.json`
 
 ## Technologies

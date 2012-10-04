@@ -11,4 +11,4 @@ module.exports = (app) ->
     @create = (req, res) ->
       user = new UserModel req.body.name
       user.save()
-      res.redirect('/users')
+      setTimeout (-> res.redirect '/users'), 1000

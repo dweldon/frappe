@@ -5,4 +5,4 @@ block content
     .well.span4.offset4
       form(action='/users', method='post', autocomplete='off')
         input(name='name', placeholder='Bob Smith', type='text', required='required')
-        p: button#submit.btn.btn-success(type='submit') Save
+        p: button#submit.btn.btn-success(type='submit', data-loading-text='Saving...') Save
