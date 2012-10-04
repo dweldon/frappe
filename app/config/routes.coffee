@@ -4,6 +4,5 @@ module.exports = (app) ->
   app.get '/', (req, res) ->
     res.render 'index', title: 'Hello World!'
 
-  app.namespace '/users', ->
-    app.get '/', UserController.index
-    app.post '/', UserController.create
+  app.get '/users', UserController.index
+  app.post '/users', UserController.create

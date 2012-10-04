@@ -1,5 +1,4 @@
 express = require 'express'
-namespace = require 'express-namespace'
 http = require 'http'
 app = express()
 
@@ -31,7 +30,6 @@ app.configure "development", ->
 
 app.configure "test", ->
   app.set 'port', PORT_TEST
-  app.disable
 
 http.createServer(app).listen app.get('port'), ->
   console.log "Express server listening on port #{app.get 'port'} in #{app.settings.env} mode"

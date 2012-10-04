@@ -76,7 +76,6 @@ directories export a single function which takes `app` as its parameter.
 * [stylus](https://github.com/learnboost/stylus)
 * [underscore](http://documentcloud.github.com/underscore/)
 * [underscore.string](https://github.com/epeli/underscore.string)
-* [express-namespace](https://github.com/visionmedia/express-namespace)
 * [connect-assets](https://github.com/TrevorBurnham/connect-assets)
 * [nib](https://github.com/visionmedia/nib)
 
