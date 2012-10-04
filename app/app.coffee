@@ -18,7 +18,7 @@ app.configure ->
   app.use app.router
   app.use require('connect-assets')(src: "#{__dirname}/assets")
   app.use express.static "#{__dirname}/public"
-  require('./config/middleware')(app)
+  require('./middleware/404')(app)
 
 app.configure 'development', ->
   app.use express.errorHandler()
