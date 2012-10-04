@@ -3,10 +3,10 @@ module.exports = (app) ->
 
   class UsersController
     @index = (req, res) ->
-      res.render 'users', title: 'users', users: UserModel.all()
+      res.render 'users', title: 'users', users: UserModel.all(), view: 'users'
 
     @new = (req, res) ->
-      res.render 'users/new', title: 'new user'
+      res.render 'users/new', title: 'new user', view: 'users_new'
 
     @create = (req, res) ->
       user = new UserModel req.body.name
