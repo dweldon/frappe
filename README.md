@@ -51,19 +51,72 @@ To update all packages and run [npmedge](https://npmjs.org/package/npmedge):
 $ cake update
 ```
 
-## Notes
+## Conventions
 
-* There are no global dependencies for production. When developing, it is
-recommended that CoffeeScript be installed globally so the `cake` command is
-available (see above).
-* Files in the assets directory are automatically compiled with connect-assets.
-* The test and development environments use different port numbers so you can
-leave your development server running while testing.
-* All modules in the models, controllers, and helpers directories (and
+Frappe tries to imposes a very minimal number of conventions. Any or all of them
+can be removed if so desired.
+
+### Titles
+
+The application layout uses a title helper. If no title is given when a template
+is rendered, the default title of *My Site* is used. If a title is passed to the
+view, the helper will upcase each word in the title. So for example if we did:
+`res.render 'users/new', title: 'new user'`, the title would be
+*My Site – New User*. Obviously, you should change this as appropriate for your
+application.
+
+### Ports
+
+The test and development environments use different port numbers so you can
+leave your development server running while testing. The default port for
+development is **8000**, and the default port for testing is **8001**. These can
+be changed dynamically by passing a port parameter to `cake start`.
+
+### Dependencies
+
+There are no global dependencies. When developing, however, it is recommended
+that CoffeeScript be installed globally so the `cake` command is available.
+
+### Modules
+
+All modules in the **helpers**, **models**, and **controllers** directories (and
 subdirectories) will be automatically required and loaded into `app.locals`. For
 example, `app/models/user_model.coffee` will be available as
-app.locals.UserModel. This requires that all modules in the aforementioned
-directories export a single function which takes `app` as its parameter.
+`app.locals.UserModel`. This was done so we can avoid having to write relative
+paths from every module to every other module. Additionally, this makes helpers
+available to the views (see title helper). This requires that all modules in the
+aforementioned directories export a single function which takes `app` as its
+parameter.
+
+### Assets
+
+Files in the assets directory are automatically compiled with connect-assets.
+This way you can have a single `site.css` and a single `site.js` in production.
+
+### Body IDs
+In order to facilitate having single assets for css and js, the body of each
+view is given a unique id. For example when we call
+`res.render 'users/new', title: 'new user', view: 'users_new'`, the value of the
+view parameter is used in the layout to render the body tag as
+`<body id="users_new_view">`. This way we can reference `body#users_new_view` in
+our css and js.
+
+## Example Files
+Frappe is both a template and a live example of how to use the few conventions
+it suggests. As such, the following files exist in the project to serve as
+placeholders:
+
+* `app/controllers/*`
+* `app/models/*`
+* `app/views/users/*`
+* `app/test/*`
+
+Additionally you will probably want to immediately customize the following:
+
+* `app/config/routes.coffee`
+* `app/helpers/title_helper.coffee`
+* `app/views/*`
+* `package.json`
 
 ## Technologies
 
