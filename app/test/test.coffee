@@ -14,7 +14,7 @@ describe 'server', ->
         done()
 
     it 'should have the proper title', ->
-      body.should.match /<title>Hello World!<\/title>/
+      body.should.include '<title>My Site</title>'
 
     it 'should say it is in test mode', ->
       body.should.include 'in <strong>test</strong> mode'
