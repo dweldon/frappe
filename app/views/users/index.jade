@@ -2,16 +2,15 @@ extends ../layout
 
 block content
   .row
-    .span4.offset4
-      h1 Users
+    .well.span4.offset4
       ul.unstyled
         for user in users
           li
             strong #{user.name}: #{user.id}
       p
-        a.btn.btn-primary.btn-large(href='/users/new')
+        a.btn.btn-primary(href='/users/new')
           i.icon-user.icon-white
           |  New User
-        a.btn.btn-large(href='/')
+        a.btn(href='/')
           i.icon-home
           |  Home

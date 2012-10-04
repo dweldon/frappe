@@ -1,6 +1,7 @@
 extends layout
 
 block content
-  h1.text-error(style='margin-top:40px') 404
-    small  Would you like a frappé?
-  img(alt='404', src='/img/frappe.png', style='margin-top:40px')
+  .row.span4.offset4
+    h1.text-error 404
+      small  Bummer.
+    p.muted The requested URL #{path} was not found on this server.

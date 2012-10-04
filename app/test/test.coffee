@@ -17,7 +17,7 @@ describe 'server', ->
       body.should.match /<title>Hello World!<\/title>/
 
     it 'should say it is in test mode', ->
-      body.should.match /in test mode!/
+      body.should.include 'in <strong>test</strong> mode'
 
   describe '404', ->
     it 'should reply with a 404 status code', (done) ->

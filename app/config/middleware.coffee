@@ -6,7 +6,7 @@ module.exports = (app) ->
 
     # respond with html page
     if req.accepts 'html'
-      res.render '404', title: '404', view: 'error_404'
+      res.render '404', title: '404', path: req.path, view: 'error_404'
       return
 
     # respond with json
