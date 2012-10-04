@@ -19,7 +19,7 @@ $ cd [project-name] && rm -rf .git && npm install
 
 ## Commands
 
-### start
+### Start
 
 To start the server:
 ```sh
@@ -37,14 +37,14 @@ example will start the server listening on port 3000 in production mode:
 $ cake -p 3000 -e production start
 ```
 
-### test
+### Test
 
 To run the tests:
 ```sh
 $ cake test
 ```
 
-### update
+### Update
 
 To update all packages and run [npmedge](https://npmjs.org/package/npmedge):
 ```sh
@@ -94,7 +94,7 @@ Files in the assets directory are automatically compiled with connect-assets.
 This way you can have a single `site.css` and a single `site.js` in production.
 
 ### Body IDs
-In order to facilitate having single assets for css and js, the body of each
+To facilitate having single assets for css and js, the body of each
 view is given a unique id. For example when we call
 `res.render 'users/new', title: 'new user', view: 'users_new'`, the value of the
 view parameter is used in the layout to render the body tag as
@@ -124,13 +124,12 @@ Additionally you will probably want to immediately customize the following:
 
 * [node](http://nodejs.org/)
 * [express](https://github.com/visionmedia/express)
-* [coffee-script](https://github.com/jashkenas/coffee-script)
 * [jade](https://github.com/visionmedia/jade)
 * [stylus](https://github.com/learnboost/stylus)
+* [coffee-script](https://github.com/jashkenas/coffee-script)
 * [underscore](http://documentcloud.github.com/underscore/)
 * [underscore.string](https://github.com/epeli/underscore.string)
 * [connect-assets](https://github.com/TrevorBurnham/connect-assets)
-* [nib](https://github.com/visionmedia/nib)
 
 ### Development Dependencies
 
@@ -142,7 +141,7 @@ Additionally you will probably want to immediately customize the following:
 
 ### Also Included
 
-* [jquery 1.8.1](http://jquery.com/)
+* [jquery 1.8.2](http://jquery.com/)
 * [bootstrap 2.1.1](http://twitter.github.com/bootstrap/)
 
 ## License
