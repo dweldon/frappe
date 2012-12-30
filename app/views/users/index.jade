@@ -6,7 +6,7 @@ block content
       ul.unstyled
         for user in users
           li
-            strong #{user.name}: #{user.id}
+            strong #{user.name}: #{user._id}
       p
         a.btn.btn-primary(href='/users/new')
           i.icon-user.icon-white
