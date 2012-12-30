@@ -1,15 +1,40 @@
-users = []
-
 module.exports = (app) ->
-  class UserModel
-    constructor: (@name = '') ->
-      @id = Math.random().toString(36).substr(2, 8)
+  {db} = app.locals
 
-    save: ->
-      users.push @
+  # The following User model demonstrates some mongoose features.
+  # For the full documentation see http://mongoosejs.com/docs/api.html
 
-    @removeAll: ->
-      users = []
+  UserSchema = new db.Schema
+    name: String
+    kind:
+      type: String
+      default: "visitor"
+    createdAt:
+      type: Date
+      expires: "24h"
 
-    @all: ->
-      users
+  .method
+    findSimilarKinds: (cb) ->
+      @model('User').find
+        kind: @kind
+      , cb
+
+  .static
+    findByName: (name, cb) ->
+      @find
+        name: new RegExp(name, "i")
+      , cb
+    removeAll: (err) ->
+      @remove {}, err
+    findLatestFive: (cb) ->
+      @find({})
+       .sort(createdAt: -1)
+       .limit(5)
+       .exec(cb)
+
+  .pre "save", (next) ->
+    @createdAt = new Date() # Now
+    next()
+
+  db.model 'User', UserSchema
+
