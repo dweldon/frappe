@@ -27,15 +27,16 @@ app.configure 'development', ->
 app.configure "test", ->
   app.set 'port', PORT_TEST
 
+
+require('./config/db')(app)
+console.log "Using database #{app.locals.db_uri}"
+
 autoload = require('./config/autoload')(app)
 autoload "#{__dirname}/helpers"
 autoload "#{__dirname}/models"
 autoload "#{__dirname}/controllers"
 
 require('./config/routes')(app)
-
-require('./config/db')(app)
-console.log "Using database #{app.locals.db_uri}"
 
 http.createServer(app).listen app.get('port'), ->
   port = app.get 'port'
