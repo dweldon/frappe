@@ -34,6 +34,9 @@ autoload "#{__dirname}/controllers"
 
 require('./config/routes')(app)
 
+require('./config/db')(app)
+console.log "Using database #{app.locals.db_uri}"
+
 http.createServer(app).listen app.get('port'), ->
   port = app.get 'port'
   env = app.settings.env
