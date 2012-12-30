@@ -114,6 +114,7 @@ placeholders:
 Additionally you will probably want to immediately customize the following:
 
 * `app/config/routes.coffee`
+* `app/config/db.coffee`
 * `app/helpers/title_helper.coffee`
 * `app/views/*`
 * `app/assets/*`
@@ -132,6 +133,7 @@ Additionally you will probably want to immediately customize the following:
 * [underscore](http://documentcloud.github.com/underscore/)
 * [underscore.string](https://github.com/epeli/underscore.string)
 * [connect-assets](https://github.com/TrevorBurnham/connect-assets)
+* [mongoose/MongoDB](http://mongoosejs.com)
 
 ### Development Dependencies
 
