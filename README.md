@@ -127,6 +127,7 @@ Additionally you will probably want to immediately customize the following:
 * [express](https://github.com/visionmedia/express)
 * [jade](https://github.com/visionmedia/jade)
 * [stylus](https://github.com/learnboost/stylus)
+* [nib](https://github.com/visionmedia/nib)
 * [coffee-script](https://github.com/jashkenas/coffee-script)
 * [underscore](http://documentcloud.github.com/underscore/)
 * [underscore.string](https://github.com/epeli/underscore.string)

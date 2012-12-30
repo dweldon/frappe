@@ -6,6 +6,7 @@
     "express": "3.0.x",
     "jade": "*",
     "stylus": "*",
+    "nib": "*",
     "coffee-script": "~1.4.0",
     "underscore": "~1.4.1",
     "underscore.string": "~2.3.0",
