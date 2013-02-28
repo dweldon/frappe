@@ -100,6 +100,29 @@ camel cased so `app/helpers/title_helper.coffee` will be available as
 Files in the assets directory are automatically compiled with connect-assets.
 This way you can have a single `site.css` and a single `site.js` in production.
 
+### RESTful Paths
+
+Frappe comes with a shared (client and server) module for computing RESTful
+paths. On the server it exports two functions: `pathRaw` and `pathFor`. On the
+client it exports only `pathFor`. On the server, these can be accessed via
+`app.locals.path`. Each takes a `.` separated list of singular words which
+describe the path. I recommend reading the examples in both the source file
+(`app/assets/js/shared/path.coffee`) and in the test file
+(`app/test/shared/path.coffee`). Here is a brief overview:
+
+`pathRaw` is useful for routing requests. It takes a string like
+`'user.forum.edit'`, and produces `'/users/:userid/forums/:forumid/edit'`.
+
+`pathFor` is useful for named routes in templates and client-side requests. It
+takes a string like `'user.show'`, and a parameter object like `{userid: u1}`,
+and produces `'/users/u1'`. Note that any additional parameters given will be
+appended to the end of the path.
+
+All words in the input string are pluralized unless they are a reserved word or
+they are in the token overrides list (this can be customized - see the source).
+These computed paths are completely optional, however the sample code that comes
+with Frappe will demonstrate their use.
+
 ### Body IDs
 To facilitate having single assets for css and js, the body of each
 view is given a unique id. For example when we call
