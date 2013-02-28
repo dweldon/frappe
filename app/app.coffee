@@ -28,7 +28,7 @@ app.configure "test", ->
   app.set 'port', PORT_TEST
 
 autoload = require('./config/autoload')(app)
-autoload "#{__dirname}/helpers"
+autoload "#{__dirname}/helpers", true
 autoload "#{__dirname}/models"
 autoload "#{__dirname}/controllers"
 

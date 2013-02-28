@@ -91,7 +91,9 @@ parameter.
 Note that by default, each word in a module name will be capitalized. This makes
 sense for classes like models and controllers but may not make sense for other
 modules. You can change this behavior in the way `autoload.coffee` is invoked
-and instruct it to camel case the module name instead.
+and instruct it to camel case the module name instead. For example, helpers are
+camel cased so `app/helpers/title_helper.coffee` will be available as
+`app.locals.titleHelper`.
 
 ### Assets
 
