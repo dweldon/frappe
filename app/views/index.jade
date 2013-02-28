@@ -6,7 +6,7 @@ block content
     h1 Frappé
     p.lead.muted
       | Relax and enjoy a frappé. Perhaps you'd like to add some
-      a(href='/users')  users
+      a(href=path.pathFor('user.index'))  users
       | ? By the way, you are running in 
       strong= settings.env
       |  mode.

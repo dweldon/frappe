@@ -1,5 +1,6 @@
 module.exports = (app) ->
   {UserModel} = app.locals
+  {pathFor} = app.locals.path
 
   class UsersController
     @index = (req, res) ->
@@ -11,4 +12,4 @@ module.exports = (app) ->
     @create = (req, res) ->
       user = new UserModel req.body.name
       user.save()
-      setTimeout (-> res.redirect '/users'), 1000
+      setTimeout (-> res.redirect pathFor 'user.index'), 1000

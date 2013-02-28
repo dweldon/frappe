@@ -8,9 +8,9 @@ block content
           li
             strong #{user.name}: #{user.id}
       p
-        a.btn.btn-primary(href='/users/new')
+        a.btn.btn-primary(href=path.pathFor('user.new'))
           i.icon-user.icon-white
           |  New User
-        a.btn(href='/')
+        a.btn(href=path.pathFor('index'))
           i.icon-home
           |  Home
