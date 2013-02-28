@@ -1,11 +1,9 @@
 request = require 'superagent'
 app = require '../app'
-
-PORT = app.get 'port'
-BASE_URL = "http://localhost:#{PORT}"
+util = require './util'
 
 describe '404', ->
-  url = "#{BASE_URL}/404"
+  url = util.urlFor '404'
   message = 'page not found'
 
   it 'should respond with html (accepts html)', (done) ->
