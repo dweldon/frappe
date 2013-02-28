@@ -15,7 +15,7 @@
     "node-dev": "~0.2.8",
     "mocha": "~1.8.1",
     "should": "~1.2.0",
-    "request": "~2.14.0",
-    "npmedge": "~0.1.1"
+    "npmedge": "~0.1.1",
+    "superagent": "~0.12.4"
   }
 }

@@ -1,4 +1,4 @@
-request = require 'request'
+request = require 'superagent'
 app = require '../app'
 
 PORT = app.get 'port'
@@ -6,25 +6,23 @@ BASE_URL = "http://localhost:#{PORT}"
 
 describe '404', ->
   url = "#{BASE_URL}/404"
-  message = 'page not found' 
+  message = 'page not found'
 
-  it 'should respond with html with default headers', (done) ->
-    request url, (err, res, body) ->
+  it 'should respond with html (accepts html)', (done) ->
+    request.get(url).end (res) ->
       res.should.have.status 404
       res.should.be.html
       done()
 
-  it 'should respond with json with json headers', (done) ->
-    options = {uri: url, headers: {'accept': 'application/json'}}
-    request options, (err, res, body) ->
+  it 'should respond with json (accepts json)', (done) ->
+    request.get(url).set('Accept', 'application/json').end (res) ->
       res.should.have.status 404
       res.should.be.json
-      (JSON.parse body).error.should.equal message
+      res.body.should.eql error: message
       done()
 
-  it 'should respond with text with text headers', (done) ->
-    options = {uri: url, headers: {'accept': 'text'}}
-    request options, (err, res, body) ->
+  it 'should respond with text (accepts text)', (done) ->
+    request.get(url).set('Accept', 'text/plain').end (res) ->
       res.should.have.status 404
-      body.should.equal message
+      res.text.should.equal message
       done()

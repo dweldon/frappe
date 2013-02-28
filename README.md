@@ -137,7 +137,7 @@ Additionally you will probably want to immediately customize the following:
 * [node-dev](https://github.com/fgnass/node-dev)
 * [mocha](https://github.com/visionmedia/mocha)
 * [should](https://github.com/visionmedia/should.js)
-* [request](https://github.com/mikeal/request)
+* [superagent](https://github.com/visionmedia/superagent)
 * [npmedge](https://npmjs.org/package/npmedge)
 
 ### Also Included
