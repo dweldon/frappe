@@ -160,7 +160,7 @@ Additionally you will probably want to immediately customize the following:
 * [coffee-script](https://github.com/jashkenas/coffee-script)
 * [underscore](http://documentcloud.github.com/underscore/)
 * [underscore.string](https://github.com/epeli/underscore.string)
-* [connect-assets](https://github.com/TrevorBurnham/connect-assets)
+* [connect-assets](https://github.com/adunkman/connect-assets)
 
 ### Development Dependencies
 
