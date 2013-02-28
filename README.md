@@ -88,6 +88,11 @@ available to the views (see title helper). This requires that all modules in the
 aforementioned directories export a single function which takes `app` as its
 parameter.
 
+Note that by default, each word in a module name will be capitalized. This makes
+sense for classes like models and controllers but may not make sense for other
+modules. You can change this behavior in the way `autoload.coffee` is invoked
+and instruct it to camel case the module name instead.
+
 ### Assets
 
 Files in the assets directory are automatically compiled with connect-assets.
