@@ -142,7 +142,7 @@ Additionally you will probably want to immediately customize the following:
 
 ### Also Included
 
-* [jquery 1.8.2](http://jquery.com/)
+* [jquery 1.9.1](http://jquery.com/)
 * [bootstrap 2.1.1](http://twitter.github.com/bootstrap/)
 
 ## License
