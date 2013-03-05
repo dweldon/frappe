@@ -173,7 +173,7 @@ Additionally you will probably want to immediately customize the following:
 ### Also Included
 
 * [jquery 1.9.1](http://jquery.com/)
-* [bootstrap 2.3.0](http://twitter.github.com/bootstrap/)
+* [bootstrap 2.3.1](http://twitter.github.com/bootstrap/)
 
 ## License
 
