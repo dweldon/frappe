@@ -16,7 +16,10 @@ app.configure ->
   #app.use express.cookieParser 'your secret here'
   #app.use express.session()
   app.use app.router
-  app.use require('connect-assets')(src: "#{__dirname}/assets")
+  app.use require('connect-assets')(
+    helperContext: app.locals
+    src: "#{__dirname}/assets"
+  )
   app.use express.static "#{__dirname}/public"
   require('./middleware/404')(app)
 

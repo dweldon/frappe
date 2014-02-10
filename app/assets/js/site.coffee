@@ -1,5 +1,5 @@
-#= require vendor/jquery.js
-#= require vendor/bootstrap.js
+#= require js/vendor/jquery.js
+#= require js/vendor/bootstrap.js
 #= require_tree shared
 
 $ ->
