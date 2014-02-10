@@ -1,4 +1,4 @@
-doctype 5
+doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
@@ -9,9 +9,9 @@ html(lang='en')
     link(href='/css/bootstrap-responsive.min.css', rel='stylesheet')
     //if lt IE 9
       script(src='//html5shim.googlecode.com/svn/trunk/html5.js')
-    != css('site')
+    != css('css/site')
   body(id="#{view}_view")
     .container
       block content
     block js
-      != js('site')
+      != js('js/site')
